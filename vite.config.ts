@@ -5,7 +5,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { defineConfig } from "vite";
 
-const __filename = fileURLToPath(import.meta.url );
+const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export default defineConfig({
@@ -16,9 +16,11 @@ export default defineConfig({
       "@shared": path.resolve(__dirname, "shared"),
     },
   },
-  root: path.resolve(__dirname, "client"),
+  // Root is now the project root (default), so we don't set it.
+  // We explicitly tell Vite where the public static assets are:
+  publicDir: "client/public",
   build: {
-    outDir: path.resolve(__dirname, "dist/public"),
+    outDir: "dist/public",
     emptyOutDir: true,
   },
   server: {
