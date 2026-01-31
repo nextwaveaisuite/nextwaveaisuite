@@ -1,28 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import { Button } from "../ui/button";
-
-const linkStyle: React.CSSProperties = {
-  color: "inherit",
-  textDecoration: "none",
-  padding: "8px 10px",
-  borderRadius: 10,
-  fontSize: 14,
-};
-
-function TopLink({ to, label }: { to: string; label: string }) {
-  return (
-    <NavLink
-      to={to}
-      style={({ isActive }) => ({
-        ...linkStyle,
-        background: isActive ? "rgba(0,0,0,0.06)" : "transparent",
-      })}
-    >
-      {label}
-    </NavLink>
-  );
-}
+import { NavLink, Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
@@ -32,44 +9,35 @@ export default function Navbar() {
         top: 0,
         zIndex: 20,
         backdropFilter: "blur(10px)",
-        background: "rgba(255,255,255,0.88)",
-        borderBottom: "1px solid rgba(0,0,0,0.08)",
+        background: "rgba(10,14,20,0.55)",
+        borderBottom: "1px solid rgba(255,255,255,0.10)",
       }}
     >
-      <div
-        style={{
-          maxWidth: 1120,
-          margin: "0 auto",
-          padding: "14px 18px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          gap: 14,
-        }}
-      >
-        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+      <div className="container" style={{ paddingTop: 12, paddingBottom: 12, display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12 }}>
+        <Link to="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
           <div
             style={{
-              width: 36,
-              height: 36,
+              width: 34,
+              height: 34,
               borderRadius: 12,
-              background:
-                "linear-gradient(135deg, #1e5eff 0%, #00c2ff 45%, #ffd000 100%)",
-              boxShadow: "0 10px 30px rgba(0,0,0,0.12)",
+              background: "linear-gradient(135deg, #1e5eff 0%, #00c2ff 45%, #ffd000 100%)",
+              boxShadow: "0 16px 40px rgba(0,0,0,0.35)",
             }}
             aria-hidden="true"
           />
-          <strong style={{ letterSpacing: 0.2 }}>NextWave AI Suite</strong>
-        </div>
+          <div style={{ display: "flex", flexDirection: "column", lineHeight: 1.1 }}>
+            <strong style={{ letterSpacing: -0.02 }}>NextWave AI Suite</strong>
+            <span className="small">Developer & App Support Hub</span>
+          </div>
+        </Link>
 
-        <nav style={{ display: "flex", gap: 6, alignItems: "center", flexWrap: "wrap" }}>
-          <TopLink to="/" label="Home" />
-          <TopLink to="/tools" label="Tools" />
-          <TopLink to="/apps" label="Apps" />
-          <TopLink to="/pricing" label="Pricing" />
-          <TopLink to="/support" label="Support" />
-          <TopLink to="/about" label="About" />
-          <Button size="sm" variant="outline">Login</Button>
+        <nav style={{ display: "flex", gap: 6, alignItems: "center", flexWrap: "wrap", justifyContent: "flex-end" }}>
+          <NavLink to="/" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>Home</NavLink>
+          <NavLink to="/tools" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>Tools</NavLink>
+          <NavLink to="/apps" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>Apps</NavLink>
+          <NavLink to="/pricing" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>Pricing</NavLink>
+          <NavLink to="/support" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>Support</NavLink>
+          <NavLink to="/about" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>About</NavLink>
         </nav>
       </div>
     </header>
