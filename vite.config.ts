@@ -3,22 +3,17 @@ import react from "@vitejs/plugin-react";
 import path from "node:path";
 
 export default defineConfig({
-  // Your entry HTML is /client/index.html
   root: "client",
-
   plugins: [react()],
-
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "src"),
+      "@": path.resolve(__dirname, "client/src"),
     },
   },
-
-  // Use /public at repo root (you already have it)
+  // If you have assets in repo-level /public keep this.
+  // Otherwise, remove this line and use /client/public instead.
   publicDir: path.resolve(__dirname, "public"),
-
   build: {
-    // Output at repo root so Vercel can serve it
     outDir: path.resolve(__dirname, "dist"),
     emptyOutDir: true,
   },
