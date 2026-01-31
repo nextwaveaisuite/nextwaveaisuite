@@ -1,78 +1,75 @@
 import React from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 
 export default function Terms() {
   return (
-    <div style={{ maxWidth: 900, margin: "0 auto", padding: "34px 18px 56px" }}>
-      <h1 style={{ fontSize: 38, margin: "0 0 10px" }}>Terms & Conditions</h1>
-      <p style={{ margin: "0 0 18px", opacity: 0.85 }}>
-        This is a starter terms structure. Replace placeholders and adjust for your exact products.
-      </p>
+    <div className="container page">
+      <div className="surface section">
+        <div className="kicker">Legal Terms</div>
+        <h1 className="h1" style={{ marginTop: 12 }}>Terms & Conditions</h1>
+        <p className="p" style={{ marginTop: 6 }}>
+          NextWave AI Suite • Last updated: <strong>31 January 2026</strong>
+        </p>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>1) Use of Service</CardTitle>
-        </CardHeader>
-        <CardContent style={{ lineHeight: 1.7, opacity: 0.9 }}>
-          You agree to use the service lawfully and not misuse, attack, scrape, or attempt to gain unauthorized access.
-        </CardContent>
-      </Card>
+        <hr className="hr" />
 
-      <div style={{ height: 14 }} />
+        <div className="prose">
+          <h3>1. About NextWave AI Suite</h3>
+          <p>
+            NextWave AI Suite (“NextWave”, “we”, “our”, “us”) provides software, mobile apps, and web services including
+            educational, productivity, and AI-powered applications.
+          </p>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>2) Accounts</CardTitle>
-        </CardHeader>
-        <CardContent style={{ lineHeight: 1.7, opacity: 0.9 }}>
-          You are responsible for maintaining your account credentials and for activity under your account.
-        </CardContent>
-      </Card>
+          <h3>2. Use of Our Apps and Services</h3>
+          <ul>
+            <li>You agree to use our apps/services lawfully and responsibly.</li>
+            <li>You must not attempt to bypass security, scrape, reverse engineer, or abuse features.</li>
+            <li>You must not use our apps to harass others, distribute malware, or break applicable laws.</li>
+          </ul>
 
-      <div style={{ height: 14 }} />
+          <h3>3. Accounts and Support</h3>
+          <p>
+            Many apps do not require accounts. If an app includes optional contact/support features, you may choose to send
+            an email or message. You are responsible for the accuracy of the information you provide.
+          </p>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>3) Payments</CardTitle>
-        </CardHeader>
-        <CardContent style={{ lineHeight: 1.7, opacity: 0.9 }}>
-          Paid plans (if applicable) are billed via third-party processors (e.g., Stripe/PayPal). Refunds, if offered,
-          are governed by your posted refund policy.
-        </CardContent>
-      </Card>
+          <h3>4. Purchases and Monetisation</h3>
+          <p>
+            If a specific app includes paid features, those payments are handled through approved third-party processors or
+            app store billing. We do not store full card details. Any refund policy (if offered) will be shown in the app
+            store listing and/or inside the app.
+          </p>
 
-      <div style={{ height: 14 }} />
+          <h3>5. Privacy</h3>
+          <p>
+            Our Privacy Policy explains what we collect and how we handle information. By using our services, you agree to
+            our Privacy Policy.
+          </p>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>4) Disclaimer</CardTitle>
-        </CardHeader>
-        <CardContent style={{ lineHeight: 1.7, opacity: 0.9 }}>
-          The service is provided “as is” without warranties of any kind. Results may vary and depend on many factors.
-        </CardContent>
-      </Card>
+          <h3>6. Disclaimers</h3>
+          <p>
+            Our apps and services are provided “as is” and “as available.” While we aim for reliability, we do not guarantee
+            uninterrupted operation, error-free functionality, or specific outcomes. Results may vary based on usage,
+            device, settings, and other factors.
+          </p>
 
-      <div style={{ height: 14 }} />
+          <h3>7. Limitation of Liability</h3>
+          <p>
+            To the maximum extent permitted by law, NextWave AI Suite is not liable for indirect, incidental, special,
+            consequential, or punitive damages, or any loss of data, revenue, or business opportunity.
+          </p>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>5) Limitation of Liability</CardTitle>
-        </CardHeader>
-        <CardContent style={{ lineHeight: 1.7, opacity: 0.9 }}>
-          To the extent permitted by law, NextWave AI Suite is not liable for indirect or consequential damages.
-        </CardContent>
-      </Card>
+          <h3>8. Changes</h3>
+          <p>
+            We may update these Terms as our apps evolve. Updates will be posted on this page with a revised date.
+          </p>
 
-      <div style={{ height: 14 }} />
-
-      <Card>
-        <CardHeader>
-          <CardTitle>6) Contact</CardTitle>
-        </CardHeader>
-        <CardContent style={{ lineHeight: 1.7, opacity: 0.9 }}>
-          Questions about these terms: <b>support@nextwaveaisuite.com</b> (replace with your real email).
-        </CardContent>
-      </Card>
+          <h3>9. Contact</h3>
+          <p>
+            If you have questions about these Terms, contact:<br />
+            <strong>nextwaveaisuite@gmail.com</strong>
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
