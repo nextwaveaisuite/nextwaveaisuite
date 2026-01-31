@@ -1,30 +1,26 @@
-import { jsxLocPlugin } from "@builder.io/vite-plugin-jsx-loc";
-import tailwindcss from "@tailwindcss/vite";
+import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
-import { defineConfig } from "vite";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 export default defineConfig({
-  plugins: [react(), tailwindcss(), jsxLocPlugin()],
+  // Your entry HTML is /client/index.html, so make that the Vite root
+  root: "client",
+
+  plugins: [react()],
+
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "client", "src"),
-      "@shared": path.resolve(__dirname, "shared"),
+      "@": path.resolve(__dirname, "src"),
     },
   },
-  // Root is now the project root (default), so we don't set it.
-  // We explicitly tell Vite where the public static assets are:
-  publicDir: "client/public",
+
+  // Use the repo-level /public folder (since you already have it)
+  // If you prefer /client/public then remove this line.
+  publicDir: path.resolve(__dirname, "public"),
+
   build: {
-    outDir: "dist/public",
+    // Output dist at repo root so Vercel can serve it cleanly
+    outDir: path.resolve(__dirname, "dist"),
     emptyOutDir: true,
-  },
-  server: {
-    port: 3000,
-    host: true,
   },
 });
