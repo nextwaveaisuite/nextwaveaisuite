@@ -8,10 +8,9 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "client/src"),
+      "@ui": path.resolve(__dirname, "client/src/ui"),
     },
   },
-  // If you have assets in repo-level /public keep this.
-  // Otherwise, remove this line and use /client/public instead.
   publicDir: path.resolve(__dirname, "public"),
   build: {
     outDir: path.resolve(__dirname, "dist"),
